@@ -5,12 +5,7 @@ const searchEngineId = API_CONFIG.SEARCH_ENGINE_ID;
 document.addEventListener('DOMContentLoaded', () => {
     const fetchSimilarBtn = document.getElementById('fetchSimilarBtn');
     const resultGrid = document.getElementById('resultGrid');
-    // const apiKey = 'AIzaSyA5z8IjLPpoLsyIzzKPaKn5qzV-Jl00Bp4';  // Replace with your API key
-    // const searchEngineId = '85d62e5bcbf034665';  // Replace with your search engine ID
-
-    // const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-    // const searchEngineId = import.meta.env.VITE_SEARCH_ENGINE_ID;
-
+    
     console.log(apiKey)
     console.log(searchEngineId)
 
