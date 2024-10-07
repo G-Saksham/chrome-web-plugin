@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Zara Product Scraper",
-  "version": "1.0",
+  "version": "1.0.1",
   "permissions": ["activeTab", "scripting", "tabs"],
   "action": {
     "default_popup": "popup.html",
@@ -11,8 +11,8 @@
       "128": "icons/icon128.png"
     },
     "default_popup_size": {
-      "width": 2000,  
-      "height": 2000  
+      "width": 1000,  
+      "height": 1000  
     }
   },
   "background": {
