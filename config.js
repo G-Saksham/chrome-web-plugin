@@ -1,2 +1,4 @@
-const apiKey = 'YOUR_GOOGLE_API_KEY';
-const searchEngineId = 'YOUR_SEARCH_ENGINE_ID';
+const API_CONFIG = {
+    GOOGLE_API_KEY: 'YOUR_GOOGLE_API_KEY',
+    SEARCH_ENGINE_ID: 'YOUR_SEARCH_ENGINE_ID'
+};
