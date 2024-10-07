@@ -1,13 +1,13 @@
-/* Ensure the body takes up full height for vertical centering */
+/* Ensure body expands naturally */
 body { 
     font-family: 'Roboto', Arial, sans-serif;
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
-    justify-content: center; /* Horizontally center the container */
-    align-items: center; /* Vertically center the container */
+    justify-content: center;
+    align-items: center;
     background-color: #f4f4f9;
     color: #333;
 }
@@ -19,13 +19,28 @@ h1 {
     color: #2c3e50;
 }
 
-/* Smaller font size for product name and price */
-.info { 
+/* Inline block styling for product information */
+.info {
     margin-bottom: 12px;
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px;
     color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.info strong {
+    width: 40%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.info span {
+    width: 60%;
+    text-align: right;
+}
+
+/* Style for the product image */
 #productImage {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,6 +51,7 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Button styling */
 button {
     display: block;
     width: 100%;
@@ -54,12 +70,12 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Center the grid and its images */
+/* Grid for similar products */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    justify-content: center; /* Center the grid itself */
+    justify-content: center;
     padding-top: 10px;
 }
 
@@ -70,7 +86,7 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    justify-self: center; /* Center images in each grid cell */
+    justify-self: center;
 }
 
 .grid img:hover {
@@ -81,7 +97,7 @@ button:hover {
     transform: scale(0.95);
 }
 
-/* Container remains in the center with some padding and shadow */
+/* Styling the container */
 .container {
     background-color: #fff;
     border-radius: 10px;
@@ -89,4 +105,17 @@ button:hover {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     text-align: center;
+    margin: auto;
+}
+
+/* Styling for the truncated titles under images */
+.image-container {
+    text-align: center;
+}
+
+.image-title {
+    font-size: 12px;
+    color: #333;
+    margin-top: 8px;
+    text-decoration: underline;
 }

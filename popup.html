@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zara Product Info</title>
-    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Product Information</h1>
-        <div class="info"><strong>Name:</strong> <span id="productName">Loading...</span></div>
-        <div class="info"><strong>Price:</strong> <span id="productPrice">Loading...</span></div>
-        <div class="info"><strong>Image:</strong><br> <img id="productImage" src="" alt="Product Image" width="100"></div>
+        
+        <div class="info">
+            <strong>Product Name:</strong>
+            <span id="productName">Loading...</span>
+        </div>
+        <div class="info">
+            <strong>Price:</strong>
+            <span id="productPrice">Loading...</span>
+        </div>
+        <div class="info">
+            <strong>Image:</strong><br>
+            <!-- Wrap image in a clickable link -->
+            <a id="productLink" href="" target="_blank">
+                <img id="productImage" src="" alt="Product Image" width="150">
+            </a>
+        </div>
 
         <button id="fetchSimilarBtn">Fetch Similar Results</button>
         <div id="resultGrid" class="grid"></div>
     </div>
+
     <script src="config.js"></script>
     <script src="popup.js"></script>
 </body>

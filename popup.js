@@ -1,13 +1,18 @@
 const apiKey = API_CONFIG.GOOGLE_API_KEY;
 const searchEngineId = API_CONFIG.SEARCH_ENGINE_ID;
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const fetchSimilarBtn = document.getElementById('fetchSimilarBtn');
     const resultGrid = document.getElementById('resultGrid');
-    
-    console.log(apiKey)
-    console.log(searchEngineId)
+    const productLink = document.getElementById('productLink');
+    const productImage = document.getElementById('productImage');
+    const productNameElement = document.getElementById('productName');
+    const productPriceElement = document.getElementById('productPrice');
+
+    // Function to truncate text to a maximum character length
+    function truncateText(text, maxLength) {
+        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+    }
 
     // Function to call Google Custom Search API
     function fetchSimilarResults(searchQuery) {
@@ -19,13 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultGrid.innerHTML = '';  // Clear previous results
                 if (data.items && data.items.length > 0) {
                     data.items.forEach(item => {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.classList.add('image-container');
+
                         const img = document.createElement('img');
                         img.src = item.link;
                         img.alt = item.title;
                         img.onclick = () => {
-                            window.open(item.image.contextLink, '_blank');  // Open link in new tab
+                            window.open(item.image.contextLink, '_blank');
                         };
-                        resultGrid.appendChild(img);
+
+                        const title = document.createElement('p');
+                        const truncatedTitle = truncateText(item.title, 10);
+                        title.innerText = truncatedTitle;
+                        title.classList.add('image-title');
+                        title.style.textDecoration = 'underline';
+
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(title);
+                        resultGrid.appendChild(imgContainer);
                     });
                 } else {
                     resultGrid.innerHTML = '<p>No similar results found.</p>';
@@ -39,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch similar results when the button is clicked
     fetchSimilarBtn.addEventListener('click', () => {
-        const productName = document.getElementById('productName').innerText;
+        const productName = productNameElement.innerText;
         if (productName && productName !== 'Loading...' && productName !== 'not found') {
             fetchSimilarResults(productName);
         } else {
@@ -65,10 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (response.name === "not found" && response.price === "not found" && response.image === "not found") {
                         document.body.innerHTML = "<strong>You are not on a product page</strong>";
                     } else {
-                        document.getElementById('productName').innerText = response.name;
-                        document.getElementById('productPrice').innerText = response.price;
-                        document.getElementById('productImage').src = response.image;
-                        document.getElementById('productImage').alt = response.name;
+                        productNameElement.innerText = response.name;
+                        productPriceElement.innerText = response.price;
+
+                        // Set image and link attributes
+                        productImage.src = response.image;
+                        productImage.alt = response.name;
+                        productLink.href = response.image; // Redirect to image URL on click
                     }
                 } else {
                     document.body.innerHTML = "<strong>You are not on a product page</strong>";
