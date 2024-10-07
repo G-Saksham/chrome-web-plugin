@@ -33,8 +33,7 @@ const API_CONFIG = {
     GOOGLE_API_KEY: 'YOUR_GOOGLE_API_KEY',
     SEARCH_ENGINE_ID: 'YOUR_GOOGLE_SEARCH_ENGINE_ID'
 };
-
----
+```
 
 This `.md` file provides the necessary instructions for users to install and configure the Chrome extension and includes a brief explanation of its usage.
 
