@@ -1,0 +1,92 @@
+/* Ensure the body takes up full height for vertical centering */
+body { 
+    font-family: 'Roboto', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontally center the container */
+    align-items: center; /* Vertically center the container */
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 { 
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Smaller font size for product name and price */
+.info { 
+    margin-bottom: 12px;
+    font-size: 14px; /* Reduced font size */
+    color: #34495e;
+}
+
+#productImage {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#productImage:hover {
+    transform: scale(1.1);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Center the grid and its images */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center; /* Center the grid itself */
+    padding-top: 10px;
+}
+
+.grid img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    justify-self: center; /* Center images in each grid cell */
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+.grid img:active {
+    transform: scale(0.95);
+}
+
+/* Container remains in the center with some padding and shadow */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
