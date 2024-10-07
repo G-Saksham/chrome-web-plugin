@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zara Product Info</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Product Information</h1>
-        
+
         <div class="info">
-            <strong>Product Name:</strong>
+            <strong>Name:</strong>
             <span id="productName">Loading...</span>
         </div>
         <div class="info">
@@ -19,15 +20,18 @@
             <span id="productPrice">Loading...</span>
         </div>
         <div class="info">
-            <strong>Image:</strong><br>
-            <!-- Wrap image in a clickable link -->
-            <a id="productLink" href="" target="_blank">
-                <img id="productImage" src="" alt="Product Image" width="150">
-            </a>
+            <strong>Image:</strong>
         </div>
+        <!-- Wrap image in a clickable link -->
+        <a id="productLink" href="" target="_blank">
+            <img id="productImage" src="" alt="Product Image">
+        </a>
 
-        <button id="fetchSimilarBtn">Fetch Similar Results</button>
+        <button id="fetchSimilarBtn">Find Similar Products</button>
         <div id="resultGrid" class="grid"></div>
+        <div class="footer">
+            <p>Powered by Google Custom Search API</p>
+        </div>
     </div>
 
     <script src="config.js"></script>
