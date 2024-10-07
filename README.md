@@ -34,6 +34,12 @@ const API_CONFIG = {
     SEARCH_ENGINE_ID: 'YOUR_GOOGLE_SEARCH_ENGINE_ID'
 };
 ```
+## Screenshots
+![Screenshot 2024-10-08 025248](https://github.com/user-attachments/assets/a763ef3d-4306-4d71-9a9b-ceecb38ae869)
+![Screenshot 2024-10-08 025317](https://github.com/user-attachments/assets/fc684519-0afd-415c-8882-9b7af2a17532)
+![Screenshot 2024-10-08 025420](https://github.com/user-attachments/assets/60b6c5c3-f829-4a96-93fe-40e5322f6b9e)
+![Screenshot 2024-10-08 025519](https://github.com/user-attachments/assets/44b80d6c-c921-481c-838b-d12d72d54ef6)
+
 
 This `.md` file provides the necessary instructions for users to install and configure the Chrome extension and includes a brief explanation of its usage.
 
